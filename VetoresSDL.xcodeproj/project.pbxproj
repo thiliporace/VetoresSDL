@@ -8,23 +8,69 @@
 
 /* Begin PBXBuildFile section */
 		8FA13BC52DDB9E54002D4F8B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA13BC42DDB9E54002D4F8B /* main.cpp */; };
+		8FA13BD82DDB9F46002D4F8B /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA13BD62DDB9F46002D4F8B /* Vector2D.cpp */; };
+		8FA13BDD2DDBAE57002D4F8B /* SdlManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA13BDB2DDBAE57002D4F8B /* SdlManager.cpp */; };
+		8FA13BE12DDBB267002D4F8B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA13BDF2DDBB267002D4F8B /* GameObject.cpp */; };
+		8FA13BE42DDBB2B3002D4F8B /* PlayerGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA13BE22DDBB2B3002D4F8B /* PlayerGameObject.cpp */; };
+		8FE3EE0D2DDE4F6C00C71F83 /* EnemyGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FE3EE0B2DDE4F6C00C71F83 /* EnemyGameObject.cpp */; };
+		8FE3EE122DDE5F1A00C71F83 /* enemy.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FE3EE102DDE5F0500C71F83 /* enemy.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8FE3EE132DDE5F1D00C71F83 /* player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FE3EE112DDE5F1100C71F83 /* player.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8FE3EE152DDE5F4700C71F83 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE3EE142DDE5F4700C71F83 /* SDL2.framework */; };
+		8FE3EE162DDE5F4700C71F83 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE3EE142DDE5F4700C71F83 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FE3EE192DDE5F5200C71F83 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE3EE182DDE5F5200C71F83 /* SDL2_ttf.framework */; };
+		8FE3EE1A2DDE5F5200C71F83 /* SDL2_ttf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE3EE182DDE5F5200C71F83 /* SDL2_ttf.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FE3EE1C2DDE5F5E00C71F83 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE3EE1B2DDE5F5E00C71F83 /* SDL2_image.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		8FE3EE1D2DDE5F5E00C71F83 /* SDL2_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE3EE1B2DDE5F5E00C71F83 /* SDL2_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		8FA13BBF2DDB9E54002D4F8B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				8FE3EE132DDE5F1D00C71F83 /* player.png in CopyFiles */,
+				8FE3EE122DDE5F1A00C71F83 /* enemy.png in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE3EE172DDE5F4700C71F83 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FE3EE1D2DDE5F5E00C71F83 /* SDL2_image.framework in Embed Frameworks */,
+				8FE3EE1A2DDE5F5200C71F83 /* SDL2_ttf.framework in Embed Frameworks */,
+				8FE3EE162DDE5F4700C71F83 /* SDL2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8FA13BC12DDB9E54002D4F8B /* VetoresSDL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VetoresSDL; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA13BC42DDB9E54002D4F8B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8FA13BCC2DDB9E7A002D4F8B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		8FA13BD02DDB9E92002D4F8B /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		8FA13BD32DDB9E9F002D4F8B /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		8FA13BD62DDB9F46002D4F8B /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
+		8FA13BD72DDB9F46002D4F8B /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
+		8FA13BDB2DDBAE57002D4F8B /* SdlManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SdlManager.cpp; sourceTree = "<group>"; };
+		8FA13BDC2DDBAE57002D4F8B /* SdlManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SdlManager.hpp; sourceTree = "<group>"; };
+		8FA13BDF2DDBB267002D4F8B /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		8FA13BE02DDBB267002D4F8B /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		8FA13BE22DDBB2B3002D4F8B /* PlayerGameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerGameObject.cpp; sourceTree = "<group>"; };
+		8FA13BE32DDBB2B3002D4F8B /* PlayerGameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayerGameObject.hpp; sourceTree = "<group>"; };
+		8FE3EE0B2DDE4F6C00C71F83 /* EnemyGameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyGameObject.cpp; sourceTree = "<group>"; };
+		8FE3EE0C2DDE4F6C00C71F83 /* EnemyGameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EnemyGameObject.hpp; sourceTree = "<group>"; };
+		8FE3EE102DDE5F0500C71F83 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy.png; path = "../../../../../Downloads/Simple Space/PNG/Retina/enemy.png"; sourceTree = "<group>"; };
+		8FE3EE112DDE5F1100C71F83 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = "../../../../../Downloads/Simple Space/PNG/Retina/player.png"; sourceTree = "<group>"; };
+		8FE3EE142DDE5F4700C71F83 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		8FE3EE182DDE5F5200C71F83 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		8FE3EE1B2DDE5F5E00C71F83 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE3EE1C2DDE5F5E00C71F83 /* SDL2_image.framework in Frameworks */,
+				8FE3EE192DDE5F5200C71F83 /* SDL2_ttf.framework in Frameworks */,
+				8FE3EE152DDE5F4700C71F83 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +92,7 @@
 			children = (
 				8FA13BC32DDB9E54002D4F8B /* VetoresSDL */,
 				8FA13BC22DDB9E54002D4F8B /* Products */,
+				8FA13BCB2DDB9E7A002D4F8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +107,66 @@
 		8FA13BC32DDB9E54002D4F8B /* VetoresSDL */ = {
 			isa = PBXGroup;
 			children = (
+				8FA13BE52DDBC263002D4F8B /* Assets */,
+				8FA13BDE2DDBB259002D4F8B /* Objects */,
+				8FA13BDA2DDBAE4D002D4F8B /* SDL */,
+				8FA13BD92DDBAE43002D4F8B /* Math */,
 				8FA13BC42DDB9E54002D4F8B /* main.cpp */,
 			);
 			path = VetoresSDL;
+			sourceTree = "<group>";
+		};
+		8FA13BCB2DDB9E7A002D4F8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FE3EE1B2DDE5F5E00C71F83 /* SDL2_image.framework */,
+				8FE3EE182DDE5F5200C71F83 /* SDL2_ttf.framework */,
+				8FE3EE142DDE5F4700C71F83 /* SDL2.framework */,
+				8FA13BD32DDB9E9F002D4F8B /* SDL2_ttf.framework */,
+				8FA13BD02DDB9E92002D4F8B /* SDL2_image.framework */,
+				8FA13BCC2DDB9E7A002D4F8B /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FA13BD92DDBAE43002D4F8B /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				8FA13BD62DDB9F46002D4F8B /* Vector2D.cpp */,
+				8FA13BD72DDB9F46002D4F8B /* Vector2D.hpp */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		8FA13BDA2DDBAE4D002D4F8B /* SDL */ = {
+			isa = PBXGroup;
+			children = (
+				8FA13BDB2DDBAE57002D4F8B /* SdlManager.cpp */,
+				8FA13BDC2DDBAE57002D4F8B /* SdlManager.hpp */,
+			);
+			path = SDL;
+			sourceTree = "<group>";
+		};
+		8FA13BDE2DDBB259002D4F8B /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8FA13BDF2DDBB267002D4F8B /* GameObject.cpp */,
+				8FA13BE02DDBB267002D4F8B /* GameObject.hpp */,
+				8FA13BE22DDBB2B3002D4F8B /* PlayerGameObject.cpp */,
+				8FA13BE32DDBB2B3002D4F8B /* PlayerGameObject.hpp */,
+				8FE3EE0B2DDE4F6C00C71F83 /* EnemyGameObject.cpp */,
+				8FE3EE0C2DDE4F6C00C71F83 /* EnemyGameObject.hpp */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		8FA13BE52DDBC263002D4F8B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8FE3EE102DDE5F0500C71F83 /* enemy.png */,
+				8FE3EE112DDE5F1100C71F83 /* player.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +179,7 @@
 				8FA13BBD2DDB9E54002D4F8B /* Sources */,
 				8FA13BBE2DDB9E54002D4F8B /* Frameworks */,
 				8FA13BBF2DDB9E54002D4F8B /* CopyFiles */,
+				8FE3EE172DDE5F4700C71F83 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -119,6 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA13BE42DDBB2B3002D4F8B /* PlayerGameObject.cpp in Sources */,
+				8FA13BE12DDBB267002D4F8B /* GameObject.cpp in Sources */,
+				8FA13BDD2DDBAE57002D4F8B /* SdlManager.cpp in Sources */,
+				8FE3EE0D2DDE4F6C00C71F83 /* EnemyGameObject.cpp in Sources */,
+				8FA13BD82DDB9F46002D4F8B /* Vector2D.cpp in Sources */,
 				8FA13BC52DDB9E54002D4F8B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +358,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +370,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
