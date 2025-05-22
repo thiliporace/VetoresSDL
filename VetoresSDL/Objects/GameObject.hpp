@@ -27,6 +27,8 @@ protected:
     bool isAlive;
 
 public:
+    float rotation;
+    
     SDL_FRect rect;
     
     Vector2D velocity;

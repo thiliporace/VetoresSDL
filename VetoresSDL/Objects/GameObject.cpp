@@ -14,7 +14,7 @@
 
 using namespace std;
 
-GameObject::GameObject(Vector2D& initialPosition, int objectWidth, int objectHeight, const std::string& assetName) : velocity(Vector2D(0,0)), width(objectWidth), height(objectHeight) {
+GameObject::GameObject(Vector2D& initialPosition, int objectWidth, int objectHeight, const std::string& assetName) : velocity(Vector2D(0,0)), width(objectWidth), height(objectHeight), rotation(0) {
     SdlManager* sdlManager = SdlManager::getInstance();
         
     spriteTexture = nullptr;

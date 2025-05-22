@@ -9,6 +9,7 @@
 #define PlayerGameObject_hpp
 
 #include <stdio.h>
+#include <iostream>
 
 #include "GameObject.hpp"
 
@@ -17,7 +18,14 @@ private:
     bool isMoving;
     
     const float playerShipMoveSpeed = 300;
-public:
+    const float playerDashSpeed = 350;
+    
+    int playerWidth;
+    
+    std::shared_ptr<int> mousePosX, mousePosY;
+    
+    Vector2D upVector, forwardVector;
+public:    
     void update(float deltaTime) override;
     
     void moveTo(Vector2D& destination, float deltaTime);
@@ -27,6 +35,8 @@ public:
     void setIsMoving(bool b);
     
     void calculateSpeed(float deltaTime);
+    
+    void moveAutomatically(float deltaTime);
     
     PlayerGameObject(Vector2D initialPosition, int w, int h, const std::string& assetName);
 };

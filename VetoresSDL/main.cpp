@@ -36,13 +36,13 @@ void vectorCalculations(){
     
     bool isPlayerInLineOfSight = angleBetweenEnemyAndPlayer < (enemyShip->fov/2) ? true : false;
     
-    std::cout << "player in line of sight: " << isPlayerInLineOfSight << std::endl;
+//    std::cout << "player in line of sight: " << angleBetweenEnemyAndPlayer << std::endl;
     
     float dotProductBetweenPlayerAndEnemy = enemyShip->forwardVector.dotProduct(*playerDirectionVector);
     
     bool isPlayerFacingEnemy = dotProductBetweenPlayerAndEnemy > 0 ? false : true;
     
-    if (dotProductBetweenPlayerAndEnemy != 0) std::cout << "player facing enemy: " << isPlayerFacingEnemy << std::endl;
+//    if (dotProductBetweenPlayerAndEnemy != 0) std::cout << "player facing enemy: " << isPlayerFacingEnemy << std::endl;
 }
 
 void update(float deltaTime){
@@ -58,7 +58,7 @@ void render(SDL_Renderer* renderer){
     
     for(auto& gameObject : gameObjectsInScene){
         if (!gameObject->getTexture()) continue;
-        SDL_RenderCopyF(renderer, gameObject->getTexture(), NULL, &gameObject->rect);
+        SDL_RenderCopyExF(renderer, gameObject->getTexture(), NULL, &gameObject->rect, gameObject->rotation * (180/M_PI), NULL, SDL_FLIP_NONE);
     }
     
     SDL_RenderPresent(renderer);
@@ -66,6 +66,8 @@ void render(SDL_Renderer* renderer){
 
 void handlePlayerMovement(float deltaTime){
     const Uint8* keystate = SDL_GetKeyboardState(NULL);
+    
+    bool movingAutomatically;
     
     playerDirectionVector = std::make_shared<Vector2D>(Vector2D(0,0));
     
@@ -86,10 +88,18 @@ void handlePlayerMovement(float deltaTime){
         playerDirectionVector->y += 1;
     }
     
+    if(keystate[SDL_SCANCODE_LSHIFT]){
+        playerShip->moveAutomatically(deltaTime);
+        movingAutomatically = true;
+    }
+    else{
+        movingAutomatically = false;
+    }
+    
     if(playerDirectionVector->x != 0 || playerDirectionVector->y != 0){
         playerShip->moveTo(*playerDirectionVector, deltaTime);
     }
-    else{
+    else if (!movingAutomatically){
         playerShip->stopMoving(deltaTime);
     }
 }

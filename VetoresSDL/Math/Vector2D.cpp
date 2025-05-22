@@ -30,7 +30,10 @@ float Vector2D::angleBetween(Vector2D &obj){
     
     float dotProduct = this->dotProduct(obj);
     float theta = acos(dotProduct/(mag1 * mag2));
-    return theta;
+    
+    Vector2D auxVector = this->rotatedVector(90 * (M_PI/180));
+    
+    return auxVector.dotProduct(obj) > 0 ? theta : -theta;
 }
 
 Vector2D Vector2D::normalized(){
@@ -53,4 +56,42 @@ Vector2D Vector2D::operator+(const Vector2D &obj){
 
 Vector2D Vector2D::operator-(const Vector2D &obj){
     return Vector2D(x - obj.x,y - obj.y);
+}
+
+//Operações de transformação de coordenada:
+
+Vector2D Vector2D::rotatedVector(float angleRad){
+    //Multiplicando pela matriz de transformação em 2D
+    return Vector2D(
+        x * std::cos(angleRad) - y * std::sin(angleRad),
+        x * std::sin(angleRad) + y * std::cos(angleRad)
+    );
+}
+
+Vector2D Vector2D::transformObjectToUpright(Vector2D &obj){
+    return rotatedVector(this->angleBetween(obj));
+}
+
+Vector2D Vector2D::transformUprightToWorld(Vector2D& obj){
+    return Vector2D(x + obj.x,y + obj.y);
+}
+
+Vector2D Vector2D::transformObjectToWorld(Vector2D &obj){
+    Vector2D vec1 = transformObjectToUpright(obj);
+    Vector2D vec2 = transformUprightToWorld(vec1);
+    return vec2;
+}
+
+Vector2D Vector2D::transformWorldToUpright(Vector2D &obj){
+    return Vector2D(x - obj.x, y - obj.x);
+}
+
+Vector2D Vector2D::transformUprightToObject(Vector2D &obj){
+    return rotatedVector(this->angleBetween(obj));
+}
+
+Vector2D Vector2D::transformWorldToObject(Vector2D &obj){
+    Vector2D vec1 = transformWorldToUpright(obj);
+    Vector2D vec2 = transformUprightToObject(vec1);
+    return vec2;
 }
